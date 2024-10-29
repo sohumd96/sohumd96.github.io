@@ -1,0 +1,58 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: #333;
+    padding: 1rem;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+    margin: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#home {
+    text-align: center;
+    background: #f4f4f4;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Project Cards */
+.project-card {
+    background-color: #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
