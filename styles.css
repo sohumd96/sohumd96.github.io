@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    padding-left: 0px; /* To account for sidebar width */
 }
 
 /* Navigation Bar */
@@ -20,21 +21,39 @@ nav ul {
     background-color: #333;
     padding: 1rem;
     justify-content: center;
+    gap: 20px;
+    justify-content: flex-end; /* Aligns items to the right */
+    margin-right: 20px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 16px;
+}
+
+.resume-btn {
+    padding: 5px 15px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.resume-btn:hover {
+    background-color: white;
+    color: #333;
 }
 
 /* Section Styling */
 section {
     padding: 20px;
-    margin: 20px;
+    margin: 20px 40px 20px 70px; /* Adds space to the left for the sidebar */
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -56,3 +75,33 @@ h1, h2 {
     border-radius: 8px;
     margin-bottom: 10px;
 }
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 65%; /* Lower position so it's more in the bottom half */
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styling for each icon link */
+.icon {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+/* Hover effect for icons */
+.icon:hover {
+    color: #007acc;
+}
+
+/* Custom colors for each social icon */
+.icon.github:hover { color: #333; }
+.icon.instagram:hover { color: #E1306C; }
+.icon.email:hover { color: #007acc; }
+.icon.substack:hover { color: #FF6700; }
+.icon.linkedin:hover { color: #0077B5; }
