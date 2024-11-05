@@ -14,6 +14,81 @@ body {
     padding-left: 0px; /* To account for sidebar width */
 }
 
+/* Full-screen centered Intro section without visible box */
+#intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* Center text vertically */
+    align-items: flex-start;    /* Left-align text */
+    text-align: left;
+    height: 100vh;              /* Full viewport height */
+    padding-left: 2vw;          /* Slight left padding for positioning */
+    padding-right: 8vw;         /* Right padding to center text within viewport */
+    margin: 0 auto;             /* Centers the section horizontally */
+    background: none;           /* Removes any background */
+    border: none;               /* Removes any borders */
+    box-shadow: none;           /* Removes any shadow */
+    position: relative;         /* Allows absolute positioning for the text */
+}
+
+/* Additional text adjustments */
+.intro-text {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+    position: absolute;         /* Allows for precise positioning */
+    top: 40%;                  /* Vertically center the text */
+    left: 10%;                 /* Left-aligned with slight padding */
+    transform: translateY(-50%); /* Center vertically based on text height */
+}
+
+.intro-name {
+    font-size: 2em;
+    color: rgb(27, 209, 63);
+    font-weight: 700;
+    margin: 0.1em 0;
+    line-height: 1.2em;
+}
+
+.intro-headline {
+    font-size: 5em;
+    color: #444;
+    margin: 0; 
+    font-weight: 600;
+    line-height: 1.2em;
+    margin-left: -7px;
+    margin: 0 0 0em;
+    
+}
+
+.intro-description {
+    font-size: 1.25em;
+    color: rgb(119, 117, 117);
+    line-height: 1.2em;
+    margin-top: 0.5em;
+}
+
+/* Adjust font sizes for mobile */
+@media (max-width: 768px) {
+    .intro-name {
+        font-size: 2.2em;
+    }
+
+    .intro-headline {
+        font-size: 1.4em;
+    }
+
+    .intro-description {
+        font-size: 0.9em;
+    }
+}
+
+
+
+
+
+
+
 /* Navigation Bar */
 nav ul {
     display: flex;
