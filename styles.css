@@ -29,6 +29,7 @@ body {
     border: none;               /* Removes any borders */
     box-shadow: none;           /* Removes any shadow */
     position: relative;         /* Allows absolute positioning for the text */
+    z-index: 1;
 }
 
 /* Additional text adjustments */
@@ -159,6 +160,7 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    z-index: 10; /* Higher than intro */
 }
 
 /* Styling for each icon link */
@@ -175,8 +177,8 @@ h1, h2 {
 }
 
 /* Custom colors for each social icon */
-.icon.github:hover { color: #333; }
+.icon.github:hover { color: rgb(189, 9, 221); }
 .icon.instagram:hover { color: #E1306C; }
-.icon.email:hover { color: #007acc; }
+.icon.email:hover { color: #01aa58; }
 .icon.substack:hover { color: #FF6700; }
 .icon.linkedin:hover { color: #0077B5; }
