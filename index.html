@@ -1,99 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunny Dalal - Senior Software Engineer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunny Dalal — Senior Software Engineer</title>
+<meta name="description" content="Sunny Dalal — Senior Software Engineer specializing in backend platforms, developer tooling, and cloud infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0c0e;
+    --surface:#12151a;
+    --surface-2:#161a20;
+    --border:#242a31;
+    --border-soft:#1b2027;
+    --text:#e7e9ea;
+    --text-dim:#8a929b;
+    --text-faint:#565d66;
+    --accent:#e8a548;
+    --accent-soft:#3a2e18;
+    --accent-dim:#a67a37;
+    --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --maxw: 760px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(232,165,72,0.06), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; }
+  ::selection{ background:var(--accent); color:#0a0c0e; }
+
+  :focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- shared layout ---------- */
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 22px;
+    letter-spacing:0.02em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px;
+    height:1px;
+    background:var(--accent-dim);
+    display:inline-block;
+  }
+
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--border-soft);
+  }
+  section:last-of-type{ border-bottom:none; }
+
+  h2{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:22px;
+    margin:0 0 20px;
+    color:var(--text);
+  }
+
+  p{ color:var(--text-dim); margin:0 0 14px; }
+
+  /* ---------- top nav ---------- */
+  header.topnav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(10,12,14,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .topnav-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .brand{
+    font-family:var(--mono);
+    font-size:14px;
+    color:var(--text);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .brand .p{ color:var(--accent); }
+
+  nav.paths{
+    display:flex;
+    gap:18px;
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-family:var(--mono);
+    font-size:13px;
+  }
+  nav.paths a{
+    color:var(--text-dim);
+    text-decoration:none;
+    padding:4px 2px;
+    border-bottom:1px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav.paths a:hover{ color:var(--accent); border-color:var(--accent-dim); }
+
+  .topnav-icons{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .topnav-icons a{
+    color:var(--text-dim);
+    display:flex;
+    transition:color .15s ease;
+  }
+  .topnav-icons a:hover{ color:var(--accent); }
+  .topnav-icons svg{ width:17px; height:17px; }
+
+  @media (max-width:620px){
+    nav.paths{ display:none; }
+  }
+
+  /* ---------- hero ---------- */
+  #intro{
+    padding:96px 0 72px;
+    border-bottom:1px solid var(--border-soft);
+  }
+  .term{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 20px 60px -30px rgba(0,0,0,0.6);
+  }
+  .term-bar{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:11px 14px;
+    border-bottom:1px solid var(--border);
+    background:var(--surface-2);
+  }
+  .term-dot{ width:10px; height:10px; border-radius:50%; background:#30353c; }
+  .term-title{
+    margin-left:8px;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-faint);
+  }
+  .term-body{
+    padding:26px 26px 30px;
+    font-family:var(--mono);
+  }
+  .term-line{
+    color:var(--text-dim);
+    font-size:14px;
+    margin-bottom:10px;
+  }
+  .term-line .p{ color:var(--accent); }
+  .typed{
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    border-right:2px solid var(--accent);
+    width:0;
+    animation:typing 1.6s steps(11,end) 0.3s forwards, blink .8s step-end infinite;
+    vertical-align:bottom;
+  }
+  @keyframes typing{ to{ width:11ch; } }
+  @keyframes blink{ 50%{ border-color:transparent; } }
+  @media (prefers-reduced-motion: reduce){
+    .typed{ width:11ch; animation:none; border-right:none; }
+  }
+
+  .term-name{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:34px;
+    color:var(--text);
+    margin:18px 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .term-role{
+    font-family:var(--mono);
+    font-size:14px;
+    color:var(--accent);
+    margin-bottom:16px;
+  }
+  .term-desc{
+    font-family:var(--sans);
+    font-size:15px;
+    color:var(--text-dim);
+    max-width:56ch;
+    margin-bottom:24px;
+  }
+  .term-cta{ display:flex; gap:12px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--mono);
+    font-size:13px;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:6px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#171003;
+    font-weight:600;
+    border:1px solid var(--accent);
+  }
+  .btn-primary:hover{ transform:translateY(-1px); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--text-dim);
+    border:1px solid var(--border);
+  }
+  .btn-ghost:hover{ color:var(--text); border-color:var(--accent-dim); }
+
+  /* ---------- about ---------- */
+  .stack-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:18px;
+  }
+  .stack-tags span{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--accent-dim);
+    background:var(--accent-soft);
+    border:1px solid rgba(232,165,72,0.18);
+    padding:5px 10px;
+    border-radius:5px;
+  }
+
+  /* ---------- experience ---------- */
+  .exp-list{
+    position:relative;
+    margin-top:28px;
+  }
+  .exp-list::before{
+    content:"";
+    position:absolute;
+    left:5px;
+    top:6px;
+    bottom:6px;
+    width:1px;
+    background:var(--border);
+  }
+  .exp-item{
+    position:relative;
+    padding-left:32px;
+    margin-bottom:38px;
+  }
+  .exp-item:last-child{ margin-bottom:0; }
+  .exp-node{
+    position:absolute;
+    left:0;
+    top:6px;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--accent-dim);
+  }
+  .exp-item.current .exp-node{ border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft); }
+
+  .exp-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:8px;
+    margin-bottom:2px;
+  }
+  .exp-role{ font-weight:700; font-size:16px; color:var(--text); }
+  .exp-company{ color:var(--accent); font-weight:600; font-size:15px; }
+  .exp-meta{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-faint);
+    margin-bottom:12px;
+  }
+  .exp-bullets{
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .exp-bullets li{
+    color:var(--text-dim);
+    font-size:14.5px;
+    position:relative;
+    padding-left:16px;
+    margin-bottom:8px;
+  }
+  .exp-bullets li::before{
+    content:"›";
+    position:absolute;
+    left:0;
+    color:var(--accent-dim);
+    font-family:var(--mono);
+  }
+  .exp-earlier-line{
+    font-size:14px;
+    color:var(--text-dim);
+    margin-bottom:6px;
+  }
+  .exp-earlier-line:last-child{ margin-bottom:0; }
+  .exp-earlier-line strong{ color:var(--text); font-weight:600; }
+
+  /* ---------- contact ---------- */
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:22px;
+  }
+  .contact-card{
+    flex:1 1 200px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:16px 18px;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .contact-card:hover{ border-color:var(--accent-dim); transform:translateY(-2px); }
+  .contact-card svg{ width:18px; height:18px; color:var(--accent); flex-shrink:0; }
+  .contact-label{ font-family:var(--mono); font-size:11px; color:var(--text-faint); }
+  .contact-value{ font-size:14px; color:var(--text); font-weight:500; }
+
+  footer{
+    padding:36px 0 56px;
+    text-align:center;
+  }
+  footer p{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-faint);
+    margin:0;
+  }
+</style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#about">01. About</a></li>
-            <li><a href="#experience">02. Experience</a></li>
-            <li><a href="#projects">03. Projects</a></li>
-            <li><a href="#contact">04. Contact</a></li>
-            <li><a href="resume.pdf" target="_blank" class="resume-btn">Resume</a></li>
-        </ul>
+<header class="topnav">
+  <div class="topnav-inner">
+    <a href="#intro" class="brand"><span class="p">~/</span>sunny-dalal</a>
+    <nav class="paths">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
     </nav>
-
-
-    <!-- Home Section -->
-    <!-- <section id="home">
-        <h1>Sunny Dalal</h1>
-        <p>Software Engineer</p>
-    </section> -->
-
-    <!-- Social media sidebar -->
-    <div class="sidebar">
-        <a href="https://github.com/sohumd96" target="_blank" class="icon github"><i class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/sunnydalal4lyfe" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:sunnydalal.sde@gmail.com" class="icon email"><i class="fas fa-envelope"></i></a>
-        <a href="https://your-substack-url" target="_blank" class="icon substack"><i class="fas fa-book"></i></a>
-        <a href="https://linkedin.com/in/sunny-dalal" target="_blank" class="icon linkedin"><i class="fab fa-linkedin"></i></a>
+    <div class="topnav-icons">
+      <a href="https://github.com/sohumd96" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.4-3.87-1.4-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.2-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.2 1.18a11 11 0 0 1 5.82 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.6.23 2.77.11 3.05.75.8 1.2 1.83 1.2 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sunny-dalal/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+      </a>
+      <a href="mailto:sunnydalal.sde@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.8 6.2 7.8-6.2H4.2Zm-.2 1.6V18h16V7.6l-7.5 5.97a1 1 0 0 1-1.25 0L4 7.6Z"/></svg>
+      </a>
     </div>
+  </div>
+</header>
 
-    <!-- Intro Section -->
-    <section id="intro">
-        <div class="intro-text">
-            <h1 class="intro-name">Hi, my name is</h1>
-            <h2 class="intro-headline">
-                Sunny Dalal.<br>
-                I build software
-            </h2>
-            <p class="intro-description">
-                I'm a software engineer specializing in building (and sometimes designing) fast backend applications usually on the cloud.<br>
-                Currently, I'm focusing on pivoting into financial tech.
-            </p>
+<main class="wrap">
+
+  <!-- Intro -->
+  <section id="intro">
+    <div class="term">
+      <div class="term-bar">
+        <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+        <span class="term-title">sunny@dalal — zsh</span>
+      </div>
+      <div class="term-body">
+        <div class="term-line"><span class="p">$</span> whoami: <span class="typed">Sunny Dalal</span></div>
+        <div class="term-role">Staff Software Engineer @ twenty.io</div>
+        <p class="term-desc">
+          I build backend platforms and infrastructure — usually as the core of the product
+          itself, powering what customers actually use. Currently at Twenty, working in defense tech.
+        </p>
+        <div class="term-cta">
+          <a href="#experience" class="btn btn-primary">View experience</a>
+          <a href="resume.pdf" target="_blank" class="btn btn-ghost">Download resume</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
+  <!-- About -->
+  <section id="about">
+    <p class="eyebrow">$ cat about.md</p>
+    <h2>About</h2>
+    <p>
+      Currently a Staff Software Engineer at Twenty, a defense tech startup. Before that, I spent
+      years inside large engineering orgs — Capital One and MicroStrategy — building the backend
+      platforms and infrastructure at the core of the product, the systems customers were actually
+      running on.
+    </p>
+    <p>
+      I gravitate toward problems at the infrastructure layer: reliable APIs, resilient systems,
+      the stuff that has to just work because it's what the product is actually built on.
+    </p>
+    <div class="stack-tags">
+      <span>--python</span><span>--cpp</span><span>--golang</span><span>--aws</span><span>--azure</span>
+      <span>--kubernetes</span><span>--terraform</span><span>--postgresql</span>
+    </div>
+  </section>
 
+  <!-- Experience -->
+  <section id="experience">
+    <p class="eyebrow">$ git log --stat experience/</p>
+    <h2>Experience</h2>
+    <div class="exp-list">
 
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Experienced software engineer with 5+ years in the tech industry, specializing in cloud automation and infrastructure management within AWS and Azure environments. Skilled in developing, deploying, and maintaining cloud solutions with a focus on optimizing operations through automation and DevOps methodologies. Proven ability to support and streamline cloud infrastructure, with expertise in scaling and securing cloud services for dynamic environments. Currently seeking to leverage technical experience in a finance-focused role within fintech, driven by a strong interest in aligning cloud engineering capabilities with financial technology solutions.</p>
-    </section>
-    
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Experienced software engineer with 5+ years in the tech industry, specializing in cloud automation and infrastructure management within AWS and Azure environments. Skilled in developing, deploying, and maintaining cloud solutions with a focus on optimizing operations through automation and DevOps methodologies. Proven ability to support and streamline cloud infrastructure, with expertise in scaling and securing cloud services for dynamic environments. Currently seeking to leverage technical experience in a finance-focused role within fintech, driven by a strong interest in aligning cloud engineering capabilities with financial technology solutions.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Basic Order Book</h3>
-            <p>An order book is a real-time list of buy and sell orders for a specific asset, like a stock, currency, or cryptocurrency. It’s a core component in markets, providing transparency about current supply and demand and helping traders make decisions. Order books display bid orders (buy) and ask orders (sell), often sorted by price and showing the quantity available at each price level.</p>
-            <a href="https://github.com/sohumd96/Order-Book" target="_blank">View on GitHub</a>
+      <div class="exp-item current">
+        <span class="exp-node"></span>
+        <div class="exp-head">
+          <span class="exp-role">Staff Software Engineer</span>
         </div>
-        <div class="project-card">
-            <h3>Black-Scholes Pricing Model</h3>
-            <p>The Black-Scholes Pricing Model is a mathematical model used to calculate the theoretical price of European-style options. This model provides a formula that factors in the stock price, strike price, time to expiration, risk-free interest rate, and the volatility of the stock. It’s widely used in finance for valuing options and is particularly useful for options that don’t pay dividends.
-            </p>
-            <a href="https://github.com/sohumd96/Black-Scholes-Pricing-Model" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-            <h3>Monte Carlo Simulation</h3>
-            <p>A Monte Carlo Simulation is a computational technique that uses random sampling to estimate numerical results, especially useful in cases where an analytical solution is complex or impossible to obtain. In finance, it's often used for option pricing, risk analysis, and portfolio management, relying on randomness to simulate a range of outcomes and determine their probabilities.</p>
-            <a href="https://github.com/sohumd96/Monte-Carlo-Simulation" target="_blank">View on GitHub</a>
-        </div>
-    </section>
+        <div class="exp-company">Twenty</div>
+        <div class="exp-meta">Arlington, VA · Jun 2026 – Present</div>
+        <ul class="exp-bullets">
+          <li>Lead architecture and design decisions in building AI-enabled cyber-warfare systems for the U.S. military and Intelligence Community, contributing to industrial-scale cyber capabilities engineered for reliability under real-world conditions.</li>
+          <li>Engineering systems built around recursive graph expansion — modeling and traversing large, interconnected data structures to support operations across a large and evolving threat landscape.</li>
+          <li>Support platform and infrastructure engineering efforts across the broader engineering org, joining during the company's Series A and continuing through its Series B-1 raise at a $1.2B valuation.</li>
+        </ul>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="sunnydalal.sde@gmail.com">sunnydalal.sde@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/sunny-dalal/" target="_blank">https://www.linkedin.com/in/sunny-dalal/</a></p>
-        <p>Github: <a href="https://github.com/sohumd96">https://github.com/sohumd96</a></p>
-    </section>
+      <div class="exp-item">
+        <span class="exp-node"></span>
+        <div class="exp-head">
+          <span class="exp-role">Senior Software Engineer — Enterprise Platforms</span>
+        </div>
+        <div class="exp-company">Capital One</div>
+        <div class="exp-meta">McLean, VA · Feb 2025 – Oct 2025</div>
+        <ul class="exp-bullets">
+          <li>Built a distributed backend platform for enterprise customer-banking services, enabling automated API validation and compliance checks across dozens of microservices and multiple engineering teams.</li>
+          <li>Designed Python-based developer tooling to scaffold test harnesses and publish results into Jira X-Ray and GitHub checks, cutting manual validation effort by ~70% across 5,000+ component tests.</li>
+          <li>Integrated platform services into CI/CD and local dev workflows, bringing full API validation suites under 5 minutes and lifting test coverage on customer-facing services by ~40%.</li>
+          <li>Ran weekly cross-team technical reviews with 5–10 product and platform teams, maintaining 100% SLA compliance while unblocking downstream engineering work.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <span class="exp-node"></span>
+        <div class="exp-head">
+          <span class="exp-role">Senior Software Engineer — Platforms on Cloud</span>
+        </div>
+        <div class="exp-company">MicroStrategy</div>
+        <div class="exp-meta">Tysons Corner, VA · Jan 2019 – Oct 2024</div>
+        <ul class="exp-bullets">
+          <li>Engineered REST APIs in Java (Spring MVC) and PostgreSQL to provision AWS EC2–based customer environments, supporting automated deployments across hundreds of instances.</li>
+          <li>Automated cloud provisioning with Kubernetes, Terraform, Lambda, Step Functions, and SQS, cutting manual operational effort and accelerating environment setup.</li>
+          <li>Led architecture and prototyping for platform enhancements that improved reliability and cut AWS/Azure infrastructure costs by ~15% while supporting continued customer growth.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <span class="exp-node"></span>
+        <div class="exp-head">
+          <span class="exp-role">Earlier Experience</span>
+        </div>
+        <div class="exp-earlier-line"><strong>Software Engineering Intern, AWS Marketplace</strong> — Amazon Web Services · Seattle, WA · Jun – Aug 2017</div>
+        <div class="exp-earlier-line"><strong>Software Engineering Intern, Genomics Automation</strong> — USDA · Beltsville, MD · Sep 2017 – Aug 2018</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <p class="eyebrow">$ cat contact.md</p>
+    <h2>Contact</h2>
+    <div class="contact-row">
+      <a class="contact-card" href="mailto:sunnydalal.sde@gmail.com">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.8 6.2 7.8-6.2H4.2Zm-.2 1.6V18h16V7.6l-7.5 5.97a1 1 0 0 1-1.25 0L4 7.6Z"/></svg>
+        <span>
+          <span class="contact-label">EMAIL</span><br>
+          <span class="contact-value">sunnydalal.sde@gmail.com</span>
+        </span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/sunny-dalal/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        <span>
+          <span class="contact-label">LINKEDIN</span><br>
+          <span class="contact-value">/in/sunny-dalal</span>
+        </span>
+      </a>
+      <a class="contact-card" href="https://github.com/sohumd96" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.4-3.87-1.4-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.2-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.2 1.18a11 11 0 0 1 5.82 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.6.23 2.77.11 3.05.75.8 1.2 1.83 1.2 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+        <span>
+          <span class="contact-label">GITHUB</span><br>
+          <span class="contact-value">@sohumd96</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>~/sunny-dalal $ // built with HTML &amp; CSS, no framework</p>
+</footer>
+
 </body>
 </html>
