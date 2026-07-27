@@ -17,7 +17,7 @@
     --border-soft:#1b2027;
     --text:#e7e9ea;
     --text-dim:#8a929b;
-    --text-faint:#565d66;
+    --text-faint:#7f8790;
     --accent:#e8a548;
     --accent-soft:#3a2e18;
     --accent-dim:#a67a37;
@@ -36,6 +36,7 @@
       var(--bg);
     color:var(--text);
     font-family:var(--sans);
+    font-size:17px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
@@ -58,7 +59,7 @@
 
   .eyebrow{
     font-family:var(--mono);
-    font-size:13px;
+    font-size:14px;
     color:var(--accent);
     display:flex;
     align-items:center;
@@ -83,7 +84,7 @@
   h2{
     font-family:var(--sans);
     font-weight:700;
-    font-size:22px;
+    font-size:24px;
     margin:0 0 20px;
     color:var(--text);
   }
@@ -110,7 +111,7 @@
   }
   .brand{
     font-family:var(--mono);
-    font-size:14px;
+    font-size:15px;
     color:var(--text);
     text-decoration:none;
     white-space:nowrap;
@@ -124,7 +125,7 @@
     margin:0;
     padding:0;
     font-family:var(--mono);
-    font-size:13px;
+    font-size:14px;
   }
   nav.paths a{
     color:var(--text-dim);
@@ -176,7 +177,7 @@
   .term-title{
     margin-left:8px;
     font-family:var(--mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--text-faint);
   }
   .term-body{
@@ -185,7 +186,7 @@
   }
   .term-line{
     color:var(--text-dim);
-    font-size:14px;
+    font-size:15px;
     margin-bottom:10px;
   }
   .term-line .p{ color:var(--accent); }
@@ -207,20 +208,20 @@
   .term-name{
     font-family:var(--sans);
     font-weight:700;
-    font-size:34px;
+    font-size:36px;
     color:var(--text);
     margin:18px 0 6px;
     letter-spacing:-0.01em;
   }
   .term-role{
     font-family:var(--mono);
-    font-size:14px;
+    font-size:15px;
     color:var(--accent);
     margin-bottom:16px;
   }
   .term-desc{
     font-family:var(--sans);
-    font-size:15px;
+    font-size:16px;
     color:var(--text-dim);
     max-width:56ch;
     margin-bottom:24px;
@@ -228,7 +229,7 @@
   .term-cta{ display:flex; gap:12px; flex-wrap:wrap; }
   .btn{
     font-family:var(--mono);
-    font-size:13px;
+    font-size:14px;
     text-decoration:none;
     padding:10px 16px;
     border-radius:6px;
@@ -260,7 +261,7 @@
   }
   .stack-tags span{
     font-family:var(--mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--accent-dim);
     background:var(--accent-soft);
     border:1px solid rgba(232,165,72,0.18);
@@ -307,13 +308,29 @@
     gap:8px;
     margin-bottom:2px;
   }
-  .exp-role{ font-weight:700; font-size:16px; color:var(--text); }
-  .exp-company{ color:var(--accent); font-weight:600; font-size:15px; }
+  .exp-role{ font-weight:700; font-size:17px; color:var(--text); }
+  .exp-company{ color:var(--accent); font-weight:600; font-size:16px; }
   .exp-meta{
     font-family:var(--mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--text-faint);
     margin-bottom:12px;
+  }
+  .exp-company-head{ color:var(--accent); font-weight:600; font-size:16px; margin-bottom:8px; }
+  .exp-roles{ margin-bottom:6px; }
+  .exp-role-line{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:8px;
+  }
+  .exp-role-line .exp-role{ font-size:16px; }
+  .exp-role-line.is-latest .exp-role{ font-weight:700; }
+  .exp-role-line:not(.is-latest) .exp-role{ font-weight:600; color:var(--text-dim); }
+  .exp-role-date{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text-faint);
   }
   .exp-bullets{
     margin:0;
@@ -322,7 +339,7 @@
   }
   .exp-bullets li{
     color:var(--text-dim);
-    font-size:14.5px;
+    font-size:15.5px;
     position:relative;
     padding-left:16px;
     margin-bottom:8px;
@@ -335,7 +352,7 @@
     font-family:var(--mono);
   }
   .exp-earlier-line{
-    font-size:14px;
+    font-size:15px;
     color:var(--text-dim);
     margin-bottom:6px;
   }
@@ -363,8 +380,8 @@
   }
   .contact-card:hover{ border-color:var(--accent-dim); transform:translateY(-2px); }
   .contact-card svg{ width:18px; height:18px; color:var(--accent); flex-shrink:0; }
-  .contact-label{ font-family:var(--mono); font-size:11px; color:var(--text-faint); }
-  .contact-value{ font-size:14px; color:var(--text); font-weight:500; }
+  .contact-label{ font-family:var(--mono); font-size:12px; color:var(--text-faint); }
+  .contact-value{ font-size:15px; color:var(--text); font-weight:500; }
 
   footer{
     padding:36px 0 56px;
@@ -372,7 +389,7 @@
   }
   footer p{
     font-family:var(--mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--text-faint);
     margin:0;
   }
@@ -386,6 +403,7 @@
     <nav class="paths">
       <a href="#about">about</a>
       <a href="#experience">experience</a>
+      <a href="https://sunnydalal.substack.com/" target="_blank" rel="noopener">blog</a>
       <a href="#contact">contact</a>
     </nav>
     <div class="topnav-icons">
@@ -394,6 +412,9 @@
       </a>
       <a href="https://www.linkedin.com/in/sunny-dalal/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+      </a>
+      <a href="https://sunnydalal.substack.com/" target="_blank" rel="noopener" aria-label="Substack">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836ZM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46ZM22.54 0H1.46v2.836h21.08V0Z"/></svg>
       </a>
       <a href="mailto:sunnydalal.sde@gmail.com" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.8 6.2 7.8-6.2H4.2Zm-.2 1.6V18h16V7.6l-7.5 5.97a1 1 0 0 1-1.25 0L4 7.6Z"/></svg>
@@ -454,10 +475,12 @@
 
       <div class="exp-item current">
         <span class="exp-node"></span>
-        <div class="exp-head">
-          <span class="exp-role">Staff Software Engineer</span>
+        <div class="exp-company-head">Twenty</div>
+        <div class="exp-roles">
+          <div class="exp-role-line is-latest">
+            <span class="exp-role">Staff Software Engineer</span>
+          </div>
         </div>
-        <div class="exp-company">Twenty</div>
         <div class="exp-meta">Arlington, VA · Jun 2026 – Present</div>
         <ul class="exp-bullets">
           <li>Lead architecture and design decisions in building AI-enabled cyber-warfare systems for the U.S. military and Intelligence Community, contributing to industrial-scale cyber capabilities engineered for reliability under real-world conditions.</li>
@@ -468,10 +491,12 @@
 
       <div class="exp-item">
         <span class="exp-node"></span>
-        <div class="exp-head">
-          <span class="exp-role">Senior Software Engineer — Enterprise Platforms</span>
+        <div class="exp-company-head">Capital One</div>
+        <div class="exp-roles">
+          <div class="exp-role-line is-latest">
+            <span class="exp-role">Senior Software Engineer</span>
+          </div>
         </div>
-        <div class="exp-company">Capital One</div>
         <div class="exp-meta">McLean, VA · Feb 2025 – Oct 2025</div>
         <ul class="exp-bullets">
           <li>Built a distributed backend platform for enterprise customer-banking services, enabling automated API validation and compliance checks across dozens of microservices and multiple engineering teams.</li>
@@ -483,11 +508,18 @@
 
       <div class="exp-item">
         <span class="exp-node"></span>
-        <div class="exp-head">
-          <span class="exp-role">Senior Software Engineer — Platforms on Cloud</span>
+        <div class="exp-company-head">MicroStrategy</div>
+        <div class="exp-roles">
+          <div class="exp-role-line is-latest">
+            <span class="exp-role">Senior Software Engineer</span>
+            <span class="exp-role-date">Oct 2021 – Oct 2024</span>
+          </div>
+          <div class="exp-role-line">
+            <span class="exp-role">Software Engineer</span>
+            <span class="exp-role-date">Feb 2019 – Oct 2021</span>
+          </div>
         </div>
-        <div class="exp-company">MicroStrategy</div>
-        <div class="exp-meta">Tysons Corner, VA · Jan 2019 – Oct 2024</div>
+        <div class="exp-meta">Tysons Corner, VA</div>
         <ul class="exp-bullets">
           <li>Engineered REST APIs in Java (Spring MVC) and PostgreSQL to provision AWS EC2–based customer environments, supporting automated deployments across hundreds of instances.</li>
           <li>Automated cloud provisioning with Kubernetes, Terraform, Lambda, Step Functions, and SQS, cutting manual operational effort and accelerating environment setup.</li>
