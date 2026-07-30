@@ -301,22 +301,39 @@
   }
   .exp-item.current .exp-node{ border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft); }
 
-  .exp-head{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    gap:8px;
-    margin-bottom:2px;
-  }
   .exp-role{ font-weight:700; font-size:17px; color:var(--text); }
-  .exp-company{ color:var(--accent); font-weight:600; font-size:16px; }
   .exp-meta{
     font-family:var(--mono);
     font-size:13px;
     color:var(--text-faint);
     margin-bottom:12px;
   }
-  .exp-company-head{ color:var(--accent); font-weight:600; font-size:16px; margin-bottom:8px; }
+  .exp-company-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--accent);
+    font-weight:600;
+    font-size:16px;
+    margin-bottom:10px;
+  }
+  .exp-logo{
+    flex-shrink:0;
+    width:44px;
+    height:44px;
+    border-radius:10px;
+    background:#fff;
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    font-family:var(--mono);
+    font-size:18px;
+    font-weight:600;
+    color:#0a0c0e;
+  }
+  .exp-logo img{ width:30px; height:30px; object-fit:contain; }
   .exp-roles{ margin-bottom:6px; }
   .exp-role-line{
     display:flex;
@@ -351,14 +368,6 @@
     color:var(--accent-dim);
     font-family:var(--mono);
   }
-  .exp-earlier-line{
-    font-size:15px;
-    color:var(--text-dim);
-    margin-bottom:6px;
-  }
-  .exp-earlier-line:last-child{ margin-bottom:0; }
-  .exp-earlier-line strong{ color:var(--text); font-weight:600; }
-
   /* ---------- contact ---------- */
   .contact-row{
     display:flex;
@@ -475,7 +484,10 @@
 
       <div class="exp-item current">
         <span class="exp-node"></span>
-        <div class="exp-company-head">Twenty</div>
+        <div class="exp-company-head">
+          <span class="exp-logo"><img src="https://www.google.com/s2/favicons?domain=twenty.com&sz=64" alt="" loading="lazy" onerror="this.remove();this.parentElement.textContent='T'"></span>
+          Twenty
+        </div>
         <div class="exp-roles">
           <div class="exp-role-line is-latest">
             <span class="exp-role">Staff Software Engineer</span>
@@ -491,7 +503,10 @@
 
       <div class="exp-item">
         <span class="exp-node"></span>
-        <div class="exp-company-head">Capital One</div>
+        <div class="exp-company-head">
+          <span class="exp-logo"><img src="https://www.google.com/s2/favicons?domain=capitalone.com&sz=64" alt="" loading="lazy" onerror="this.remove();this.parentElement.textContent='C'"></span>
+          Capital One
+        </div>
         <div class="exp-roles">
           <div class="exp-role-line is-latest">
             <span class="exp-role">Senior Software Engineer</span>
@@ -508,7 +523,10 @@
 
       <div class="exp-item">
         <span class="exp-node"></span>
-        <div class="exp-company-head">MicroStrategy</div>
+        <div class="exp-company-head">
+          <span class="exp-logo"><img src="https://www.google.com/s2/favicons?domain=microstrategy.com&sz=64" alt="" loading="lazy" onerror="this.remove();this.parentElement.textContent='M'"></span>
+          MicroStrategy
+        </div>
         <div class="exp-roles">
           <div class="exp-role-line is-latest">
             <span class="exp-role">Senior Software Engineer</span>
@@ -529,11 +547,40 @@
 
       <div class="exp-item">
         <span class="exp-node"></span>
-        <div class="exp-head">
-          <span class="exp-role">Earlier Experience</span>
+        <div class="exp-company-head">
+          <span class="exp-logo"><img src="https://www.google.com/s2/favicons?domain=usda.gov&sz=64" alt="" loading="lazy" onerror="this.remove();this.parentElement.textContent='U'"></span>
+          United States Department of Agriculture
         </div>
-        <div class="exp-earlier-line"><strong>Software Engineering Intern</strong> — United States Department of Agriculture · Beltsville, MD · Sep 2017 – Aug 2018</div>
-        <div class="exp-earlier-line"><strong>Software Engineering Intern</strong> — Amazon Web Services · Seattle, WA · Jun – Aug 2017</div>
+        <div class="exp-roles">
+          <div class="exp-role-line is-latest">
+            <span class="exp-role">Software Engineering Intern — Genomics Automation</span>
+          </div>
+        </div>
+        <div class="exp-meta">Beltsville, MD · Sep 2017 – Aug 2018</div>
+        <ul class="exp-bullets">
+          <li>Developed high-performance Bash pipelines to annotate and cluster large-scale genomic datasets, significantly improving processing throughput over prior workflows.</li>
+          <li>Performed bioinformatics analysis on annotated sequences to identify gene vulnerabilities, contributing to downstream experimental design and agricultural research initiatives.</li>
+          <li>Automated genomic similarity searches using BLAST-based pipelines, increasing accuracy and consistency of sequence comparison across thousands of samples.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <span class="exp-node"></span>
+        <div class="exp-company-head">
+          <span class="exp-logo"><img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64" alt="" loading="lazy" onerror="this.remove();this.parentElement.textContent='A'"></span>
+          Amazon Web Services
+        </div>
+        <div class="exp-roles">
+          <div class="exp-role-line is-latest">
+            <span class="exp-role">Software Engineering Intern — AWS Marketplace</span>
+          </div>
+        </div>
+        <div class="exp-meta">Seattle, WA · Jun – Aug 2017</div>
+        <ul class="exp-bullets">
+          <li>Designed and implemented a scalable internal tool for business development teams, streamlining workflows and reducing manual effort by ~75%.</li>
+          <li>Built backend services and APIs using AWS-native technologies to support real-time data updates and secure data manipulation while meeting Amazon production and security standards.</li>
+          <li>Delivered production features in collaboration with senior engineers, gaining hands-on experience with large-scale internal frameworks and cloud-native service architectures.</li>
+        </ul>
       </div>
 
     </div>
